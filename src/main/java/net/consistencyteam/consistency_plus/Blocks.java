@@ -8,7 +8,14 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.screen.ScreenHandlerContext;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.math.BlockPos;
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
 import static net.minecraft.block.Blocks.*;
 
 public class Blocks {
@@ -607,6 +614,8 @@ public class Blocks {
         //mossy_end_stone_brick_pillar
         //cracked_end_stone_brick_pillar
 
+        public static final Identifier SMOOTH_FURNACE_ID = new Identifier("consistency_plus", "smooth_furnace");
+        public static final Block SMOOTH_FURNACE = register("smooth_furnace", new SmoothFurnaceBlock(FabricBlockSettings.copy(FURNACE).nonOpaque()));
 
 
     //public static final Block FORMAT_FENCE = register("format_fence", new FenceBlock(FabricBlockSettings.of(Material.STONE)));
@@ -614,6 +623,7 @@ public class Blocks {
     private static Block register(String name, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier("consistency_plus", name), block);
     }
+
     public static void init() {
     }
 }

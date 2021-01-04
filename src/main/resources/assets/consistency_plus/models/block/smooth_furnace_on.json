@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "top": "minecraft:block/stone",
+    "front": "consistency_plus:block/smooth_furnace_front_on",
+    "side": "minecraft:block/stone"
+  }
+}
